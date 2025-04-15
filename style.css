@@ -12,7 +12,7 @@
 	box-sizing: border-box;
 	font-family: 'Nunito', sans-serif, Geneva, Verdana, sans-serif;
 	scroll-behavior: smooth;
-	--background: #ebe9ea;
+	--background: #efefef;
 	--accent: #c84900;
 	--heaading2: #87480d;
 	color: #562c14;
@@ -51,10 +51,12 @@ img {
 
 .navBar {
 	display: flex;
+    flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+    align-items: flex-start;
 	gap: 0.5rem;
-	width: 100%;
+	width: auto;
 }
 
 .navLink {
@@ -216,15 +218,15 @@ footer {
 }
 
 .socials {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0.5rem;
+    display: flex;
+	flex-direction: row;
+	gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
-.socials a:hover {
-	color: var(--accent);
-}
+
 
 .copywright {
 	color: #777;
@@ -273,7 +275,11 @@ footer {
 	.socials {
 		flex-direction: row;
 		gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
 	}
+ 
 }
 
 /* Large screens: laptops/desktops (900px and above) */
@@ -307,6 +313,13 @@ footer {
 	.skillCard h3 {
 		font-size: 1.3rem;
 	}
+    
+    .socials{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin: 0 auto;
+    }
 }
 
 /* Extra large screens: desktops ≥1200px */
@@ -330,4 +343,5 @@ footer {
 		max-width: 1200px;
 		margin: 0 auto;
 	}
+    
 }
