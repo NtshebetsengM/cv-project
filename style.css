@@ -1,24 +1,333 @@
-/*headings*/
-/* <uniquifier>: Use a unique and descriptive class name
- <weight>: Use a value from 200 to 1000
-*/
+/* Reset and base styles */
 .nunito-header {
 	font-family: "Nunito", sans-serif;
 	font-optical-sizing: auto;
-	font-weight: 500; /* 200 - 1000*/
+	font-weight: 500;
 	font-style: normal;
 }
 
-:root {
+* {
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-	--accent: #ecc9e1;
+	font-family: 'Nunito', sans-serif, Geneva, Verdana, sans-serif;
+	scroll-behavior: smooth;
 	--background: #ebe9ea;
-	font-family: "nunito", sans-serif;
-	--textColour: #3a2f27;
+	--accent: #c84900;
+	--heaading2: #87480d;
+	color: #562c14;
 }
 
 body {
-	background-color: #f7f2f5;
-	margin: 0;
-	overflow-x: hidden;
+	background-color: var(--background);
+	line-height: 1.6;
+	padding: 0 1rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Navbar */
+.navBarGrid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.5rem 0;
+	background-color: var(--background);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	text-align: center;
+}
+
+.p1 img {
+	height: 40px;
+}
+
+.navBar {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.navLink {
+	width: 100%;
+	font-size: 0.95rem;
+	background-color: var(--background);
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.navLink a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+
+.navLink:hover {
+	background-color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 2rem 0;
+	border-bottom: 2px solid var(--heaading2);
+}
+
+.heroItem1,
+.heroItem2 {
+	padding: 0;
+	width: 100%;
+}
+
+.heroItem1 h1 {
+	font-size: 1.6rem;
+	color: var(--accent);
+	margin-bottom: 1rem;
+}
+
+.heroItem1 p {
+	font-size: 1rem;
+}
+
+.heroItem2 {
+	margin-top: 1rem;
+}
+
+.heroImg {
+	width: 80%;
+	max-width: 250px;
+	border-radius: 50%;
+	padding: 0.6rem;
+	opacity: 0.9;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+.aboutMeCont {
+	padding: 2rem 0;
+	border-bottom: 2px solid var(--heaading2);
+}
+
+.aboutMeCont h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 0.5rem;
+}
+
+.aboutMeCont h3 {
+	margin-bottom: 1rem;
+	color: #87480d;
+	font-size: 1.2rem;
+}
+
+.aboutMeCont p {
+	margin-bottom: 1rem;
+}
+
+/* Education & Experience */
+#education,
+#experience {
+	padding: 2rem 0;
+	border-bottom: 2px solid var(--heaading2);
+}
+
+.edu-card,
+.exp-card {
+	background-color: #f9f9f94c;
+	padding: 0.8rem;
+	border-left: 5px solid var(--accent);
+	border-radius: 10px;
+	margin-bottom: 1rem;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+	font-size: 1.5rem;
+	color: var(--accent);
+	margin-bottom: 1rem;
+}
+
+h3 {
+	color: #333;
+	font-size: 1.2rem;
+}
+
+h4 {
+	color: #666666c1;
+	font-weight: normal;
+	font-size: 1rem;
+	margin: 0.5rem 0;
+}
+
+ul {
+	padding-left: 1.5rem;
+	margin-top: 0.5rem;
+}
+
+li {
+	margin-bottom: 0.5rem;
+}
+
+/* Skills */
+#skills {
+	padding: 2rem 0;
+}
+
+.skillCard {
+	background-color: rgba(251, 251, 251, 0.491);
+	padding: 1rem;
+	border-radius: 12px;
+	margin-bottom: 1rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.skillCard h3 {
+	color: var(--accent);
+	opacity: 0.8;
+	margin-bottom: 0.5rem;
+	font-size: 1.1rem;
+}
+
+.skillCard ul {
+	list-style: circle;
+	padding-left: 1rem;
+}
+
+/* Footer */
+footer {
+	text-align: center;
+	padding: 1.5rem 0 0.8rem;
+	background-color: #f5f5f5;
+	margin-top: 3rem;
+	border-top: 2px solid #eee;
+}
+
+.socials {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.socials a:hover {
+	color: var(--accent);
+}
+
+.copywright {
+	color: #777;
+	font-size: 0.85rem;
+}
+
+
+
+/* Medium screens: tablets and up (601px and above) */
+@media (min-width: 601px) {
+	.navBarGrid {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.navBar {
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 1rem;
+	}
+
+	.navLink {
+		width: auto;
+		padding: 0.5rem 1rem;
+	}
+
+	.hero {
+		flex-direction: row;
+		text-align: left;
+		padding: 3rem 0;
+	}
+
+	.heroItem1,
+	.heroItem2 {
+		width: 50%;
+		padding: 0 1rem;
+	}
+
+	.heroImg {
+		width: 100%;
+		max-width: 20rem;
+	}
+
+	.socials {
+		flex-direction: row;
+		gap: 1rem;
+	}
+}
+
+/* Large screens: laptops/desktops (900px and above) */
+@media (min-width: 900px) {
+	body {
+		padding: 0 2rem;
+	}
+
+	.heroItem1 h1 {
+		font-size: 2.5rem;
+	}
+
+	.heroItem1 p {
+		font-size: 1.2rem;
+	}
+
+	.aboutMeCont h2,
+	h2 {
+		font-size: 2rem;
+	}
+
+	.aboutMeCont h3,
+	h3 {
+		font-size: 1.4rem;
+	}
+
+	h4 {
+		font-size: 1.1rem;
+	}
+
+	.skillCard h3 {
+		font-size: 1.3rem;
+	}
+}
+
+/* Extra large screens: desktops ≥1200px */
+@media (min-width: 1200px) {
+	.hero {
+		padding: 4rem 0;
+	}
+
+	.heroItem1 h1 {
+		font-size: 3rem;
+	}
+
+	.heroItem1 p {
+		font-size: 1.3rem;
+	}
+
+	.aboutMeCont,
+	#education,
+	#experience,
+	#skills {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 }
