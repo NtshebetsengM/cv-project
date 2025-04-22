@@ -1,6 +1,6 @@
-const locationCont = document.getElementById('location-cont')
-const weatherIconCont = document.getElementById('weather-icon-cont')
-locationCont.addEventListener('click', () => console.log("clicked"))
+const weatherCont = document.getElementById('weather-cont')
+
+weatherCont.addEventListener('click', () => console.log("clicked"))
 
 
 navigator.geolocation.getCurrentPosition(async position => {
@@ -27,13 +27,11 @@ navigator.geolocation.getCurrentPosition(async position => {
         }
         const weatherData = await weatherRes.json();
         const temp = Math.round(weatherData.main.temp);
-        const weatherDesc = weatherData.weather[0].description
-        const weatherIconUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`
-    
-        
+        const weatherMessage = `The temperature in <strong>${name}</strong>, ${state} (${country}) is  <strong>${temp}</strong>°C.`
+            
 
-        locationCont.innerHTML = `The temperature in <strong>${name}</strong>, ${state}, ${country} is `;
-        weatherIconCont.innerHTML = `${temp}°C.<img src='${weatherIconUrl}'/> ${weatherDesc}!`
+        weatherCont.innerHTML = weatherMessage ;
+        
     } catch (err) {
         console.error(err);
     }
